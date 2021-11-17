@@ -6,17 +6,17 @@ import {
   Redirect
 } from 'react-router-dom'
 import HomePage from './pages/HomePage'
-import { AuthorsList } from './features/authors/AuthorsList.js'
+import { PostsList } from './features/posts/PostsList.js'
 import TopMenu from './components/TopMenu'
 
 function App() {
   return (
     <Router>
       <TopMenu />
-      <div className="app">
+      <div className="container my-2">
         <Switch>
           <Route key="home" exact path="/" component={HomePage} />
-          <Route key="authors" exact path="/authors" component={AuthorsList} />
+          <Route key="posts" exact path="/posts" component={PostsList} />
           <Redirect to="/" />
         </Switch>
       </div>
