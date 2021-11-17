@@ -1,5 +1,13 @@
-.post-image {
+.post-card-image {
   width: 100%;
   height: 192px;
   object-fit: cover;
+}
+.single-post-image {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+}
+.page-action {
+  margin: 12px 0;
 }

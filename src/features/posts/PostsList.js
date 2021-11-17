@@ -1,22 +1,28 @@
-import React from 'react'
 import { useSelector } from 'react-redux'
+import { Link } from 'react-router-dom'
 import PostCard from '../../components/PostCard'
 
 export const PostsList = () => {
   const posts = useSelector(state => state.posts)
 
   const renderedPosts = posts.map((post, i) => (
-    <div className="col">
-  	  <PostCard key={i} post={post} />
+    <div key={i} className="col">
+  	  <PostCard post={post} />
     </div>
   ))
 
   return (
-    <div>
-      <button className="btn btn-primary btn-sm">Add New</button>
-      <div className="row mt-2">
-        {renderedPosts}
+    <section>
+      <div className="page-action">
+        <Link to="/posts/add">
+          <button className="btn btn-primary btn-sm">Add New</button>
+        </Link>
       </div>
-    </div>
+      <div className="page-content">
+        <div className="row row-cols-1 row-cols-md-4 g-2">
+          {renderedPosts}
+        </div>
+      </div>
+    </section>
   )
 }
