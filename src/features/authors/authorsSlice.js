@@ -1,6 +1,6 @@
-import AuthorCard from '../components/AuthorCard'
+import { createSlice } from '@reduxjs/toolkit'
 
-const people = [
+const initialState = [
   {
     image: '1-image.jpg',
     joinedDate: '2019',
@@ -34,16 +34,10 @@ const people = [
   }
 ]
 
-const AuthorList = () => {
-  const AuthorCards = people.map((author) => {
-    return <AuthorCard author={author} key={author.email} />
-  })
+export const authorsSlice = createSlice({
+  name: 'authors',
+  initialState,
+  reducers: {}
+})
 
-  return (
-    <div className="d-flex flex-wrap">
-      {AuthorCards}
-    </div>
-  )
-}
-
-export default AuthorList
+export default authorsSlice.reducer
